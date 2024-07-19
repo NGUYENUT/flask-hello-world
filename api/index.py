@@ -4,7 +4,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "lolol"
+    response = "lolol"
+    response.headers.add("Access-Control-Allow-Origin", "*")
+    return response
 
 @app.route('/about')
 def about():
